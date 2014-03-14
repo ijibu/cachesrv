@@ -57,6 +57,7 @@ func Dispatch(w http.ResponseWriter, r *http.Request) {
 	return
 }
 
+//显示cache中的统计信息
 func displayCacheStats() {
 	fmt.Printf("-----[ cache stats: %s ]-----\n",
 		time.Now().Format("2006-01-02 15:04:05"))
@@ -74,12 +75,12 @@ func displayCacheStats() {
 
 func main() {
 	var (
-		srv_port int
-		srv_ssl  bool
-		srv_wd   = "."
+		srv_port int   //缓存服务器的端口号
+		srv_ssl  bool  //是否采用ssl方式
+		srv_wd   = "." //工作目录
 	)
 
-	srv_bin = filepath.Base(os.Args[0])
+	srv_bin = filepath.Base(os.Args[0]) //执行文件的位置
 	empty := func(s string) bool {
 		return len(s) == 0
 	}

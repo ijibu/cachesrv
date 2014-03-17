@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/gokyle/filecache"
+	"github.com/ijibu/filecache"
 	"log"
 	"net/http"
 	"os"
